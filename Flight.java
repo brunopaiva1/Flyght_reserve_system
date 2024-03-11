@@ -1,6 +1,4 @@
-import java.util.Scanner;
 import java.util.ArrayList;
-
 class Flight{
     private String flightNumber;
     private String destination;
@@ -12,11 +10,11 @@ class Flight{
     //@ invariant passengers.size() <= capacity;
 
 
-    public Flight(String flightNumber, String destination, int capacity, ArrayList<String> passengers) {
+    public Flight(String flightNumber, String destination, int capacity) {
         this.flightNumber = flightNumber;
         this.destination = destination;
         this.capacity = capacity;
-        this.passengers = passengers;
+        this.passengers = new ArrayList<>();
     }
 
 
@@ -30,10 +28,6 @@ class Flight{
 
     public int getCapacity() {
         return capacity;
-    }
-
-    public ArrayList<String> getPassengers() {
-        return passengers;
     }
 
     public int availableSeats() {
