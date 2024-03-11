@@ -24,39 +24,35 @@ class Flight{
         return flightNumber;
     }
 
-
-    public void setFlightNumber(String flightNumber) {
-        this.flightNumber = flightNumber;
-    }
-
-
     public String getDestination() {
         return destination;
     }
-
-
-    public void setDestination(String destination) {
-        this.destination = destination;
-    }
-
 
     public int getCapacity() {
         return capacity;
     }
 
-
-    public void setCapacity(int capacity) {
-        this.capacity = capacity;
-    }
-
-
     public ArrayList<String> getPassengers() {
         return passengers;
     }
 
-
-    public void setPassengers(ArrayList<String> passengers) {
-        this.passengers = passengers;
+    public int availableSeats() {
+        return capacity - passengers.size();
     }
-    
+
+    public void bookSeat(String passengerName) {
+        if (availableSeats() > 0) {
+            passengers.add(passengerName);
+            System.out.println("Reserva confirmada para " + passengerName + " no voo " + flightNumber + ".");
+        } else {
+            System.out.println("Desculpe, não há assentos disponíveis no voo " + flightNumber + ".");
+        }
+    }
+
+    public void displayDetails() {
+        System.out.println("Detalhes do Voo " + flightNumber + ":");
+        System.out.println("Destino: " + destination);
+        System.out.println("Assentos disponíveis: " + availableSeats());
+        System.out.println("Lista de Passageiros: " + passengers);
+    }
 }
