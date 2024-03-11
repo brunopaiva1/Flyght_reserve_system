@@ -7,6 +7,10 @@ class Flight{
     private int capacity;
     private ArrayList<String> passengers;
 
+    //@ invariant passengers != null;
+    //@ invariant capacity >= 0;
+    //@ invariant passengers.size() <= capacity;
+
 
     public Flight(String flightNumber, String destination, int capacity, ArrayList<String> passengers) {
         this.flightNumber = flightNumber;
