@@ -14,4 +14,45 @@ class Flight{
         this.capacity = capacity;
         this.passengers = passengers;
     }
+
+
+    public String getFlightNumber() {
+        return flightNumber;
+    }
+
+
+    public void setFlightNumber(String flightNumber) {
+        this.flightNumber = flightNumber;
+    }
+
+
+    public String getDestination() {
+        return destination;
+    }
+
+
+    public void setDestination(String destination) {
+        this.destination = destination;
+    }
+
+
+    public int getCapacity() {
+        return capacity;
+    }
+
+
+    public void setCapacity(int capacity) {
+        this.capacity = capacity;
+    }
+
+
+    public ArrayList<String> getPassengers() {
+        return passengers;
+    }
+
+
+    public void setPassengers(ArrayList<String> passengers) {
+        this.passengers = passengers;
+    }
+    
 }
