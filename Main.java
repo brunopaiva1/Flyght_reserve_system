@@ -24,7 +24,27 @@ public class Main {
 
                     System.out.print("Digite seu nome: ");
                     String passengerName = scanner.nextLine();
-                    selectedFlight.bookSeat(passengerName);
+
+                    System.out.println("Escolha uma opção:");
+                    System.out.println("1. Reservar assento");
+                    System.out.println("2. Cancelar reserva");
+
+                    int option = Integer.parseInt(scanner.nextLine());
+
+                    switch (option) {
+                        case 1:
+                            if (selectedFlight.bookSeat(passengerName)) {
+                                System.out.println("Reserva realizada com sucesso.");
+                            } else {
+                                System.out.println("Falha ao realizar reserva.");
+                            }
+                            break;
+                        case 2:
+                            reservationSystem.cancelReservation(flightNumber - 1, passengerName);
+                            break;
+                        default:
+                            System.out.println("Opção inválida.");
+                    }
                 } else {
                     System.out.println("Escolha inválida. Por favor, digite o número do voo.");
                 }

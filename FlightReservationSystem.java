@@ -26,4 +26,13 @@ class FlightReservationSystem {
     public int getNumberOfFlights() {
         return flights.size();
     }
+
+    public void cancelReservation(int flightIndex, String passengerName) {
+        if (flightIndex >= 0 && flightIndex < flights.size()) {
+            Flight flight = flights.get(flightIndex);
+            flight.cancelSeat(passengerName);
+        } else {
+            System.out.println("Voo selecionado inválido.");
+        }
+    }
 }

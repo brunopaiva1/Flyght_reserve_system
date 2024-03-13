@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-class Flight{
+class Flight {
     private String flightNumber;
     private String destination;
     private int capacity;
@@ -11,7 +11,6 @@ class Flight{
         this.capacity = capacity;
         this.passengers = new ArrayList<>();
     }
-
 
     public String getFlightNumber() {
         return flightNumber;
@@ -29,12 +28,31 @@ class Flight{
         return capacity - passengers.size();
     }
 
-    public void bookSeat(String passengerName) {
-        if (availableSeats() > 0) {
+    public boolean isSeatAvailable() {
+        return availableSeats() > 0;
+    }
+
+    public boolean hasPassenger(String passengerName) {
+        return passengers.contains(passengerName);
+    }
+
+    public boolean bookSeat(String passengerName) {
+        if (isSeatAvailable()) {
             passengers.add(passengerName);
             System.out.println("Reserva confirmada para " + passengerName + " no voo " + flightNumber + ".");
+            return true;
         } else {
             System.out.println("Desculpe, não há assentos disponíveis no voo " + flightNumber + ".");
+            return false;
+        }
+    }
+
+    public void cancelSeat(String passengerName) {
+        if (hasPassenger(passengerName)) {
+            passengers.remove(passengerName);
+            System.out.println("Reserva cancelada para " + passengerName + " no voo " + flightNumber + ".");
+        } else {
+            System.out.println("Passageiro " + passengerName + " não encontrado no voo " + flightNumber + ".");
         }
     }
 
