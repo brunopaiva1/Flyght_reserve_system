@@ -3,6 +3,7 @@ import java.util.ArrayList;
 class FlightReservationSystem {
     private ArrayList<Flight> flights;
 
+    //@ ensures \result != null && \result.size() == flights.size();
     public FlightReservationSystem() {
         this.flights = new ArrayList<>();
         flights.add(new Flight("AA123", "Nova York", 100));
