@@ -1,10 +1,9 @@
-// openjml --esc $@
 import java.util.ArrayList;
 class Flight {
-    public String flightNumber;
-    public String destination;
-    public int capacity;
-    public ArrayList<String> passengers;
+    private String flightNumber;
+    private String destination;
+    private int capacity;
+    private ArrayList<String> passengers;
 
     public Flight(String flightNumber, String destination, int capacity) {
         this.flightNumber = flightNumber;
@@ -39,12 +38,12 @@ class Flight {
 
     public boolean bookSeat(String passengerName) {
         if (isSeatAvailable()) {
-            passengers.add(passengerName);                    
+            passengers.add(passengerName);
             System.out.println("Reserva confirmada para " + passengerName + " no voo " + flightNumber + ".");
             return true;
         } else {
             System.out.println("Desculpe, não há assentos disponíveis no voo " + flightNumber + ".");
-                return false;
+            return false;
         }
     }
 

@@ -9,7 +9,7 @@ class FlightReservationSystem {
         flights.add(new Flight("BB456", "Los Angeles", 150));
         flights.add(new Flight("CC789", "Chicago", 120));
     }
- //@ ensures \result.equals("Voos disponíveis:");
+    //@ ensures \result.equals("Voos disponíveis:");
     public void displayFlights() {
         System.out.println("Voos disponíveis:");
         for (int i = 0; i < flights.size(); i++) {
